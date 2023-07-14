@@ -1,3 +1,4 @@
+import 'package:fiverr/pages/other_pages/nav_bar/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -54,11 +55,11 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(20),
-          height: _height,
-          width: _width,
+      body: Container(
+        padding: const EdgeInsets.all(20),
+        height: _height,
+        width: _width,
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -115,19 +116,20 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    services("logo maker", "assets/images/fiverr.jpeg"),
+                    services("Logo Design", "assets/images/images (1).png"),
                     SizedBox(
                       width: _width * 0.04,
                     ),
-                    services("logo maker", "assets/images/fiverr.jpeg"),
+                    services("AI Artist", "assets/images/fiverr.jpeg"),
                     SizedBox(
                       width: _width * 0.04,
                     ),
-                    services("logo maker", "assets/images/fiverr.jpeg"),
+                    services("Logo Animation", "assets/images/images (6).jpeg"),
                     SizedBox(
                       width: _width * 0.04,
                     ),
-                    services("logo maker", "assets/images/fiverr.jpeg"),
+                    services("Bussiness Card & Stationery",
+                        "assets/images/images (7).jpeg"),
                     SizedBox(
                       width: _width * 0.04,
                     ),
@@ -165,59 +167,69 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: _height * 0.05,
               ),
-              Stack(
-                children: [
-                  Container(
-                    height: _height * 0.38,
-                    width: _width * 0.9,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.red),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(
-                        top: _height * 0.026, left: _width * 0.05),
-                    padding: const EdgeInsets.only(top: 5, left: 11),
-                    height: _height * 0.031,
-                    width: _width * 0.35,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.grey,
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => BottomNavBar(initialIndex: 1),
+                  ));
+                },
+                child: Container(
+                  height: _height * 0.38,
+                  width: _width * 0.9,
+                  decoration: BoxDecoration(
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.white,
+                            offset: Offset(4.0, 4.0),
+                            blurRadius: 3,
+                            spreadRadius: -3),
+                        BoxShadow(
+                            color: Colors.white,
+                            offset: Offset(-4.0, -4.0),
+                            blurRadius: 3,
+                            spreadRadius: -3),
+                      ],
+                      borderRadius: BorderRadius.circular(10),
+                      image: const DecorationImage(
+                          image: AssetImage("assets/images/imagee.jpg"),
+                          fit: BoxFit.cover)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Made on Fiverr",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w700,
+                            backgroundColor: Colors.grey,
+                          ),
+                        ),
+                        Text(
+                          "Explore your Interests in Fiverr",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 43),
+                        )
+                      ],
                     ),
-                    child: const Text(
-                      "MADE ON FIVERR",
-                      style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700),
-                    ),
                   ),
-                   Container(
-                     padding: EdgeInsets.only(
-                       top:_height*0.2,
-                       right: 16,
-                       left: 16,
-                     ),
-                     child: const Text(
-                       "Explore beatifiul work, picked for you.",
-                       style: TextStyle(
-                           fontSize: 37,
-                           fontWeight: FontWeight.w700,
-                           color: Colors.white),
-                     ),
-                   )
-                ],
+                ),
               ),
               SizedBox(
-                height: _height * 0.05,
+                height: _height * 0.02,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
                     "Recently viewed",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 24,
                         fontWeight: FontWeight.w700,
                         color: Colors.black),
                   ),
@@ -226,12 +238,42 @@ class _HomePageState extends State<HomePage> {
                     child: const Text(
                       "See all",
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 24,
                           fontWeight: FontWeight.w700,
                           color: Colors.greenAccent),
                     ),
                   )
                 ],
+              ),
+              SizedBox(
+                height: _height * 0.02,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    recently("assets/images/image.jpg", "You recently viewed"),
+                    SizedBox(
+                      width: _width*0.022,
+                    ),
+                    recently("assets/images/image.jpg", "You recently viewed"),
+                    SizedBox(
+                      width: _width*0.022,
+                    ),  recently("assets/images/image.jpg", "You recently viewed"),
+                    SizedBox(
+                      width: _width*0.022,
+                    ),
+                    recently("assets/images/image.jpg", "You recently viewed"),
+                    SizedBox(
+                      width: _width*0.022,
+                    ),
+                    recently("assets/images/image.jpg", "You recently viewed"),
+                    SizedBox(
+                      width: _width*0.022,
+                    ),
+
+                  ],
+                ),
               )
             ],
           ),
@@ -244,50 +286,96 @@ class _HomePageState extends State<HomePage> {
     double _height = MediaQuery.of(context).size.height;
     double _width = MediaQuery.of(context).size.width;
     return Container(
-      height: _height * 0.3,
-      width: _width * 0.5,
+      height: _height * 0.2,
+      width: _width * 0.39,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.black12),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.shade500,
             offset: const Offset(4.0, 4.0),
             blurRadius: 3,
-            spreadRadius: 3,
+            spreadRadius: -3,
           ),
+          const BoxShadow(
+              color: Colors.white,
+              offset: Offset(4.0, 4.0),
+              blurRadius: 3,
+              spreadRadius: -3),
           const BoxShadow(
               color: Colors.white,
               offset: Offset(-4.0, -4.0),
               blurRadius: 3,
-              spreadRadius: 0),
+              spreadRadius: -3),
         ],
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.black12),
       ),
       child: Column(
         children: [
-          Container(
-            height: _height * 0.184,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                  image: AssetImage(image),
-                  fit: BoxFit.cover,
-                )),
+          Expanded(
+            flex: 5,
+            child: Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(
+                        image,
+                      ),
+                      fit: BoxFit.cover)),
+            ),
           ),
-          const Divider(
-            color: Colors.black12,
-          ),
-          Container(
-            margin: EdgeInsets.only(right: _width * 0.08, top: _height * 0.013),
+          Expanded(
+            flex: 3,
             child: Text(
               text,
               style: const TextStyle(
-                  fontSize: 26,
+                  fontSize: 20,
                   color: Colors.black,
                   fontWeight: FontWeight.w700),
             ),
-          )
+          ),
         ],
+      ),
+    );
+  }
+
+  Widget recently(image, text) {
+    double _height = MediaQuery.of(context).size.height;
+    double _width = MediaQuery.of(context).size.width;
+    return Container(
+      height: _height * 0.2,
+      width: _width * 0.4,
+      decoration: BoxDecoration(
+        boxShadow: const [
+          BoxShadow(
+              color: Colors.white,
+              offset: Offset(4.0, 4.0),
+              blurRadius: 3,
+              spreadRadius: -3),
+          BoxShadow(
+              color: Colors.white,
+              offset: Offset(-4.0, -4.0),
+              blurRadius: 3,
+              spreadRadius: -3),
+        ],
+        borderRadius: BorderRadius.circular(10),
+        image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              text,
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                  color: Colors.green,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 20),
+            )
+          ],
+        ),
       ),
     );
   }

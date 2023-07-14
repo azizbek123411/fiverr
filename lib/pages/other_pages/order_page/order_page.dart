@@ -59,7 +59,11 @@ class _OrdersPageState extends State<OrdersPage> {
             ),
             TextButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, BottomNavBar.id);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => BottomNavBar(initialIndex: 2),
+                  ),
+                );
               },
               child: const Text(
                 "Explore the Marketplace",

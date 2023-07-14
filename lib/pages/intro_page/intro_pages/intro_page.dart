@@ -30,7 +30,10 @@ class _IntroPageState extends State<IntroPage> {
               ),
               height: _height,
               width: _width,
-              decoration: const BoxDecoration(color: Colors.red),
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/imagee.jpg"),
+                      fit: BoxFit.cover)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -138,25 +141,41 @@ class _IntroPageState extends State<IntroPage> {
                       Expanded(
                         flex: 5,
                         child: Container(
-                          decoration: const BoxDecoration(
+                          decoration:  BoxDecoration(
+                            image: const DecorationImage(
+                                image: AssetImage("assets/images/images (6).jpeg"),
+                              fit: BoxFit.fitHeight
+                            ),
                             color: Colors.grey,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               topRight: Radius.circular(10),
                               topLeft: Radius.circular(10),
                             ),
+                            border: Border.all(color: Colors.grey)
                           ),
                         ),
                       ),
                       Expanded(
                         flex: 3,
                         child: Container(
+                          padding: EdgeInsets.all(5),
+                          width: _width * 0.4,
                           decoration: BoxDecoration(
+
                             border: Border.all(color: Colors.grey),
                             color: Colors.white,
                             borderRadius: const BorderRadius.only(
                               bottomRight: Radius.circular(10),
                               bottomLeft: Radius.circular(10),
                             ),
+                          ),
+                          child: const Text(
+                            "Get your interests",
+                            style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.black54,
+                                fontWeight: FontWeight.w500),
+                            textAlign: TextAlign.center,
                           ),
                         ),
                       ),
@@ -166,17 +185,21 @@ class _IntroPageState extends State<IntroPage> {
                 Container(
                   margin:
                       EdgeInsets.only(left: _width * 0.05, top: _height * 0.7),
-                  height: _height * 0.2,
+                  height: _height * 0.189,
                   width: _width * 0.4,
                   decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(10)),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.grey)),
                   child: Column(
                     children: [
                       Expanded(
                         flex: 5,
                         child: Container(
                           decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/image.jpg"),
+                                fit: BoxFit.cover),
                             color: Colors.grey,
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(10),
@@ -188,13 +211,21 @@ class _IntroPageState extends State<IntroPage> {
                       Expanded(
                         flex: 3,
                         child: Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey),
+                          padding: const EdgeInsets.all(8),
+                          width: _width * 0.4,
+                          decoration: const BoxDecoration(
                             color: Colors.white,
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(10),
                               bottomRight: Radius.circular(10),
                             ),
+                          ),
+                          child: const Text(
+                            "Become a seller",
+                            style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.black54,
+                                fontWeight: FontWeight.w500),
                           ),
                         ),
                       ),

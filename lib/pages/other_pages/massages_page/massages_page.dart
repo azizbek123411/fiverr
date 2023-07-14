@@ -34,39 +34,39 @@ class _MassagesPageState extends State<MassagesPage> {
               fontSize: 25, color: Colors.black, fontWeight: FontWeight.w700),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
-        child: Center(
-          child: Column(
-            children: [
-              Image(
-                image: const AssetImage("assets/images/post.jpg"),
-                height: _height * 0.467,
-              ),
-              SizedBox(
-                height: _height * 0.2,
-              ),
-              const Text(
-                "No messages yet",
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: _height * 0.1,
+            ),
+            Image(
+              image: const AssetImage("assets/images/post.jpg"),
+              height: _height * 0.4,
+            ),
+            SizedBox(
+              height: _height * 0.1,
+            ),
+            const Text(
+              "No messages yet",
+              style: TextStyle(
+                  fontSize: 25,
+                  color: Color(0xff385A64),
+                  fontWeight: FontWeight.w700),
+            ),
+            const Padding(
+              padding:
+                  EdgeInsets.only(left: 15, right: 15, top: 10, ),
+              child: Text(
+                "Send your first message. You'll find your converstaions all right here",
                 style: TextStyle(
-                    fontSize: 25,
-                    color: Color(0xff385A64),
-                    fontWeight: FontWeight.w700),
-              ),
-              const Padding(
-                padding:
-                    EdgeInsets.only(left: 15, right: 15, bottom: 5, top: 5),
-                child: Text(
-                  "Send your first message. You'll find your converstaions all right here",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color(0xff385A64),
-                    fontWeight: FontWeight.w700,
-                  ),
+                  fontSize: 20,
+                  color: Color(0xff385A64),
+                  fontWeight: FontWeight.w700,
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

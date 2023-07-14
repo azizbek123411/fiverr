@@ -12,8 +12,9 @@ import '../search_page/search_page.dart';
 
 class BottomNavBar extends StatefulWidget {
   static const String id = "bottom_nav_bar";
+  int initialIndex;
 
-  const BottomNavBar({Key? key}) : super(key: key);
+   BottomNavBar({Key? key,required this.initialIndex}) : super(key: key);
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
@@ -22,6 +23,17 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int currentIndex = 0;
   PageController pageController = PageController();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    pageController=PageController(
+      initialPage:widget.initialIndex,
+    );
+    if(widget.initialIndex==2){
+      currentIndex=2;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

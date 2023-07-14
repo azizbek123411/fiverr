@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       home: const IntroPage(),
       routes: {
         IntroPage.id:(context)=>const IntroPage(),
-        BottomNavBar.id:(context)=>const BottomNavBar(),
+        BottomNavBar.id:(context)=> BottomNavBar(initialIndex: 0,),
         HomePage.id:(context)=>const HomePage(),
         MassagesPage.id:(context)=>const MassagesPage(),
         OrdersPage.id:(context)=>const OrdersPage(),

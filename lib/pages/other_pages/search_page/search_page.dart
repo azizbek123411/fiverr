@@ -56,15 +56,15 @@ class _SearchPageState extends State<SearchPage> {
           children: [
             ListView(
               children: [
-                _tabs("assets/images/fiverr.jpeg", "Graphics & Design",
+                _tabs("assets/images/4505770.jpg", "Graphics & Design",
                     "Logo & Brand Indetity, Gaming"),
-                _tabs("assets/images/fiverr.jpeg", "Graphics & Design",
+                _tabs("assets/images/4110943.jpg", "Digital Marketing",
+                    "Social Media Marketing,"),
+                _tabs("assets/images/5449686.jpg", "Translating ",
                     "Logo & Brand Indetity, Gaming"),
-                _tabs("assets/images/fiverr.jpeg", "Graphics & Design",
-                    "Logo & Brand Indetity, Gaming"),
-                _tabs("assets/images/fiverr.jpeg", "Graphics & Design",
-                    "Logo & Brand Indetity, Gaming"),
-                _tabs("assets/images/fiverr.jpeg", "Graphics & Design",
+                _tabs("assets/images/4727482.jpg", "Video Animation",
+                    "Video Editing"),
+                _tabs("assets/images/fiverr.jpeg", "Music Audio",
                     "Logo & Brand Indetity, Gaming"),
                 _tabs("assets/images/fiverr.jpeg", "Graphics & Design",
                     "Logo & Brand Indetity, Gaming"),
@@ -89,7 +89,7 @@ class _SearchPageState extends State<SearchPage> {
                       child: Text(
                         "Your interests",
                         style: TextStyle(
-                            fontSize: 27,
+                            fontSize: 25,
                             color: Colors.black,
                             fontWeight: FontWeight.w700),
                       ),
@@ -128,16 +128,17 @@ class _SearchPageState extends State<SearchPage> {
                     SizedBox(
                       height: _height * 0.03,
                     ),
-                     const Padding(
-                       padding: EdgeInsets.only(left: 13.0),
-                       child: Text(
+                    const Padding(
+                      padding: EdgeInsets.only(left: 13.0),
+                      child: Text(
                         "You may also like",
                         style: TextStyle(
-                            fontSize: 27,
+                            fontSize: 25,
                             color: Colors.black,
-                            fontWeight: FontWeight.w700),),
-                     ),
-                      SizedBox(
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                    SizedBox(
                       height: _height * 0.03,
                     ),
                   ],
@@ -162,44 +163,13 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 
-  Widget _tabs(image, name, text) {
+  Widget _tabs(image, titl, subtitl) {
     double _height = MediaQuery.of(context).size.height;
     double _width = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: const EdgeInsets.all(15),
-      child: SizedBox(
-        height: _height * 0.1,
-        width: _width,
-        child: Row(
-          children: [
-            Image(
-              image: AssetImage(image),
-            ),
-            const SizedBox(
-              width: 5,
-            ),
-            Column(
-              children: [
-                Text(
-                  name,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 35,
-                  ),
-                ),
-                Text(
-                  text,
-                  style: const TextStyle(
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20),
-                )
-              ],
-            )
-          ],
-        ),
-      ),
+    return ListTile(
+      leading: Image(image: AssetImage(image),),
+      title: Text(titl),
+      subtitle: Text(subtitl),
     );
   }
 }
